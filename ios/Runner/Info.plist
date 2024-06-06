@@ -32,6 +32,10 @@
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Cho phép ứng dụng truy cập vào thư viện ảnh không?</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
