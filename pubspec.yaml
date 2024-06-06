@@ -20,6 +20,7 @@ dependencies:
   flutter_colorpicker: ^1.1.0
   flutter_hooks: ^0.20.5
   path_drawing: ^1.0.1
+  dotted_border: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -45,4 +46,5 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/images/
 

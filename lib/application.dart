@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iec/domain/models/draw_controller.dart';
+import 'package:iec/home_screen.dart';
 import 'package:iec/paint_screen.dart';
 
 import 'presentation/blocs/paint_bloc/paint_bloc.dart';
@@ -30,7 +31,7 @@ class Application extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const PaintScreen(),
+        home: const HomeScreen(),
       ),
     );
   }

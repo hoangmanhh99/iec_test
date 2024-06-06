@@ -9,6 +9,7 @@ import 'dart:ui' as ui;
 
 import "package:image_gallery_saver/image_gallery_saver.dart";
 import "package:path_provider/path_provider.dart";
+import "package:screenshot/screenshot.dart";
 
 import "paint_event.dart";
 import "paint_state.dart";
@@ -51,7 +52,7 @@ class PaintBloc extends Bloc<PaintEvent, PaintState> {
       drawController = drawController?.copyWith(penTool: event.penTool);
       yield UpdateCanvasState(drawController: drawController);
     } else if (event is SavePageToGalleryEvent) {
-      save(event.globalKey ?? drawController!.globalKey!);
+      save(event.screenshotController);
     } else if (event is InitGlobalKeyEvent) {
       drawController = drawController?.copyWith(globalKey: event.globalKey);
       // drawController!.globalKey = event.globalKey;
@@ -68,6 +69,7 @@ class PaintBloc extends Bloc<PaintEvent, PaintState> {
 
         add(ClearPointEvent());
       } catch (e) {
+        print("===$e ${(e as Error).stackTrace}");
         yield MessageState(e.toString());
       }
       yield UpdateCanvasState(drawController: drawController);
@@ -102,19 +104,46 @@ class PaintBloc extends Bloc<PaintEvent, PaintState> {
     return image;
   }
 
-  Future<void> save(GlobalKey globalKey) async {
-    try {
-      final boundary =
-          globalKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
-      final image = await boundary.toImage();
-      final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-      final pngBytes = byteData!.buffer.asUint8List();
+  // Future<void> save(GlobalKey globalKey) async {
+  //   try {
+  //     final boundary =
+  //         globalKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+  //     final image = await boundary.toImage();
+  //     final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+  //     final pngBytes = byteData!.buffer.asUint8List();
+  //
+  //     final saved = await ImageGallerySaver.saveImage(
+  //       pngBytes,
+  //       quality: 100,
+  //       name: "${DateTime.now().toIso8601String()}.jpeg",
+  //       isReturnImagePathOfIOS: true,
+  //     );
+  //     add(MessageEvent("Image Saved To Gallery ♥"));
+  //   } catch (e) {
+  //     add(MessageEvent(e.toString()));
+  //   }
+  // }
 
-      final saved = await ImageGallerySaver.saveImage(
-        pngBytes,
-        quality: 100,
+  Future<void> save(ScreenshotController screenshotController) async {
+    try {
+      var imagePath = "";
+      // if (Platform.isAndroid) {
+      //   imagePath = (await getExternalStorageDirectory())!
+      //       .path
+      //       .trim(); //from path_provide package
+      // } else if (Platform.isIOS) {
+      //   imagePath = (await getApplicationDocumentsDirectory()).path.trim();
+      // }
+      imagePath = (await getApplicationDocumentsDirectory()).path.trim();
+      String fileName = "${DateTime.now().toIso8601String()}.png";
+      await screenshotController.captureAndSave(
+        imagePath, //set path where screenshot will be saved
+        fileName: fileName,
+      );
+      final saved = await ImageGallerySaver.saveFile(
+        '$imagePath/$fileName',
         name: "${DateTime.now().toIso8601String()}.jpeg",
-        isReturnImagePathOfIOS: true,
+        isReturnPathOfIOS: true,
       );
       add(MessageEvent("Image Saved To Gallery ♥"));
     } catch (e) {

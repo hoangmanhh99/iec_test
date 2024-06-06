@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iec/domain/models/draw_controller.dart';
 import 'package:iec/domain/models/point.dart';
+import 'package:screenshot/screenshot.dart';
 
 abstract class PaintEvent {}
 
@@ -64,8 +65,10 @@ class ChangeCurrentColorEvent extends PaintEvent {
 }
 
 class SavePageToGalleryEvent extends PaintEvent {
-  final GlobalKey? globalKey;
-  SavePageToGalleryEvent({this.globalKey});
+  // final GlobalKey? globalKey;
+  // SavePageToGalleryEvent({this.globalKey});
+  final ScreenshotController screenshotController;
+  SavePageToGalleryEvent({required this.screenshotController});
 }
 
 class UpdateSymmetryLines extends PaintEvent {

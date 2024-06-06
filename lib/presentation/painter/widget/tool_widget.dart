@@ -19,6 +19,7 @@ class ToolsWidget extends StatefulWidget {
 class _ToolsWidgetState extends State<ToolsWidget> {
   Color pickerColor = const Color(0xff443a49);
   Color currentColor = const Color(0xff443a49);
+  final List<String> stickerList = <String>[];
 
   void changeColor(Color color) {
     setState(() => pickerColor = color);
@@ -26,7 +27,14 @@ class _ToolsWidgetState extends State<ToolsWidget> {
 
   @override
   void initState() {
+    initialiseStickerList();
     super.initState();
+  }
+
+  void initialiseStickerList() {
+    for (var i = 0; i < 27; i++) {
+      stickerList.add('assets/images/$i.png');
+    }
   }
 
   @override
@@ -66,11 +74,6 @@ class _ToolsWidgetState extends State<ToolsWidget> {
               ),
               onTap: () {
                 _handleFABPressed(context, ToolType.colors);
-              },
-            ),
-            GestureDetector(
-              child: const Icon(Icons.emoji_emotions_outlined, size: 36, color: Colors.white,),
-              onTap: () {
               },
             ),
           ],
