@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_portal/flutter_portal.dart';
 import 'package:iec/domain/models/draw_controller.dart';
 import 'package:iec/home_screen.dart';
 import 'package:iec/paint_screen.dart';
@@ -25,13 +26,15 @@ class Application extends StatelessWidget {
           ),
         ),
       ],
-      child: MaterialApp(
-        title: 'IEC',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+      child: Portal(
+        child: MaterialApp(
+          title: 'IEC',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const HomeScreen(),
         ),
-        home: const HomeScreen(),
       ),
     );
   }

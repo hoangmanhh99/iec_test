@@ -28,7 +28,7 @@ class _PaintScreenState extends State<PaintScreen> {
 
   void initialiseStickerList() {
     for (var i = 0; i < 27; i++) {
-      stickerList.add('assets/images/$i.png');
+      stickerList.add('assets/images/img_$i.png');
     }
   }
 

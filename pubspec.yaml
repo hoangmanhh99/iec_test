@@ -21,6 +21,9 @@ dependencies:
   flutter_hooks: ^0.20.5
   path_drawing: ^1.0.1
   dotted_border: ^2.1.0
+  percent_indicator: ^4.2.3
+  just_the_tooltip: ^0.0.12
+  flutter_portal: ^1.1.4
 
 dev_dependencies:
   flutter_test:

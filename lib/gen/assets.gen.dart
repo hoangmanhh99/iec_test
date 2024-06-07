@@ -14,6 +14,9 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_coins.png
+  AssetGenImage get icCoins => const AssetGenImage('assets/icons/ic_coins.png');
+
   /// File path: assets/icons/ic_color_border.svg
   SvgGenImage get icColorBorder =>
       const SvgGenImage('assets/icons/ic_color_border.svg');
@@ -47,6 +50,10 @@ class $AssetsIconsGen {
   SvgGenImage get icPen6Preview =>
       const SvgGenImage('assets/icons/ic_pen6_preview.svg');
 
+  /// File path: assets/icons/ic_purple_heart.svg
+  SvgGenImage get icPurpleHeart =>
+      const SvgGenImage('assets/icons/ic_purple_heart.svg');
+
   /// File path: assets/icons/ic_smiley.png
   AssetGenImage get icSmileyPng =>
       const AssetGenImage('assets/icons/ic_smiley.png');
@@ -64,6 +71,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<dynamic> get values => [
+        icCoins,
         icColorBorder,
         icColorWheel,
         icEraser,
@@ -73,6 +81,7 @@ class $AssetsIconsGen {
         icPen2Preview,
         icPen3Preview,
         icPen6Preview,
+        icPurpleHeart,
         icSmileyPng,
         icSmileySvg,
         icStarPng,
@@ -80,10 +89,131 @@ class $AssetsIconsGen {
       ];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/img_0.png
+  AssetGenImage get img0 => const AssetGenImage('assets/images/img_0.png');
+
+  /// File path: assets/images/img_1.png
+  AssetGenImage get img1 => const AssetGenImage('assets/images/img_1.png');
+
+  /// File path: assets/images/img_10.png
+  AssetGenImage get img10 => const AssetGenImage('assets/images/img_10.png');
+
+  /// File path: assets/images/img_11.png
+  AssetGenImage get img11 => const AssetGenImage('assets/images/img_11.png');
+
+  /// File path: assets/images/img_12.png
+  AssetGenImage get img12 => const AssetGenImage('assets/images/img_12.png');
+
+  /// File path: assets/images/img_13.png
+  AssetGenImage get img13 => const AssetGenImage('assets/images/img_13.png');
+
+  /// File path: assets/images/img_14.png
+  AssetGenImage get img14 => const AssetGenImage('assets/images/img_14.png');
+
+  /// File path: assets/images/img_15.png
+  AssetGenImage get img15 => const AssetGenImage('assets/images/img_15.png');
+
+  /// File path: assets/images/img_16.png
+  AssetGenImage get img16 => const AssetGenImage('assets/images/img_16.png');
+
+  /// File path: assets/images/img_17.png
+  AssetGenImage get img17 => const AssetGenImage('assets/images/img_17.png');
+
+  /// File path: assets/images/img_18.png
+  AssetGenImage get img18 => const AssetGenImage('assets/images/img_18.png');
+
+  /// File path: assets/images/img_19.png
+  AssetGenImage get img19 => const AssetGenImage('assets/images/img_19.png');
+
+  /// File path: assets/images/img_2.png
+  AssetGenImage get img2 => const AssetGenImage('assets/images/img_2.png');
+
+  /// File path: assets/images/img_20.png
+  AssetGenImage get img20 => const AssetGenImage('assets/images/img_20.png');
+
+  /// File path: assets/images/img_21.png
+  AssetGenImage get img21 => const AssetGenImage('assets/images/img_21.png');
+
+  /// File path: assets/images/img_22.png
+  AssetGenImage get img22 => const AssetGenImage('assets/images/img_22.png');
+
+  /// File path: assets/images/img_23.png
+  AssetGenImage get img23 => const AssetGenImage('assets/images/img_23.png');
+
+  /// File path: assets/images/img_24.png
+  AssetGenImage get img24 => const AssetGenImage('assets/images/img_24.png');
+
+  /// File path: assets/images/img_25.png
+  AssetGenImage get img25 => const AssetGenImage('assets/images/img_25.png');
+
+  /// File path: assets/images/img_26.png
+  AssetGenImage get img26 => const AssetGenImage('assets/images/img_26.png');
+
+  /// File path: assets/images/img_27.png
+  AssetGenImage get img27 => const AssetGenImage('assets/images/img_27.png');
+
+  /// File path: assets/images/img_3.png
+  AssetGenImage get img3 => const AssetGenImage('assets/images/img_3.png');
+
+  /// File path: assets/images/img_4.png
+  AssetGenImage get img4 => const AssetGenImage('assets/images/img_4.png');
+
+  /// File path: assets/images/img_5.png
+  AssetGenImage get img5 => const AssetGenImage('assets/images/img_5.png');
+
+  /// File path: assets/images/img_6.png
+  AssetGenImage get img6 => const AssetGenImage('assets/images/img_6.png');
+
+  /// File path: assets/images/img_7.png
+  AssetGenImage get img7 => const AssetGenImage('assets/images/img_7.png');
+
+  /// File path: assets/images/img_8.png
+  AssetGenImage get img8 => const AssetGenImage('assets/images/img_8.png');
+
+  /// File path: assets/images/img_9.png
+  AssetGenImage get img9 => const AssetGenImage('assets/images/img_9.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        img0,
+        img1,
+        img10,
+        img11,
+        img12,
+        img13,
+        img14,
+        img15,
+        img16,
+        img17,
+        img18,
+        img19,
+        img2,
+        img20,
+        img21,
+        img22,
+        img23,
+        img24,
+        img25,
+        img26,
+        img27,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7,
+        img8,
+        img9
+      ];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
